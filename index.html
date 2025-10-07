@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イタリアンの王 - 至高の食材が織りなす、王の晩餐</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* カスタムスタイル */
+        :root {
+            --color-primary: #800020; /* Burgundy */
+            --color-secondary: #D4AF37; /* Gold */
+            --color-background: #FDFBF5; /* Cream */
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--color-background);
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .hero-section {
+            height: 80vh;
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .text-secondary { color: var(--color-secondary); }
+        .border-secondary { border-color: var(--color-secondary); }
+        
+        /* ローディングスピナー */
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--color-secondary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ヘッダー -->
+    <header class="bg-primary shadow-lg sticky top-0 z-50 text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-serif text-secondary">イタリアンの王</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#concept" class="hover:text-secondary transition duration-300">コンセプト</a>
+                <a href="#menu" class="hover:text-secondary transition duration-300">メニュー</a>
+                <a href="#gallery" class="hover:text-secondary transition duration-300">ギャラリー</a>
+                <a href="#faq" class="hover:text-secondary transition duration-300">Q&A</a>
+                <a href="#info" class="hover:text-secondary transition duration-300">店舗情報</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary px-6 pb-4">
+            <a href="#concept" class="block py-2 hover:text-secondary">コンセプト</a>
+            <a href="#menu" class="block py-2 hover:text-secondary">メニュー</a>
+            <a href="#gallery" class="block py-2 hover:text-secondary">ギャラリー</a>
+            <a href="#faq" class="block py-2 hover:text-secondary">Q&A</a>
+            <a href="#info" class="block py-2 hover:text-secondary">店舗情報</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero-section bg-gray-700 bg-cover bg-center flex items-center justify-center text-white relative">
+            <div id="hero-image-container" class="absolute inset-0 w-full h-full">
+                 <div class="absolute inset-0 bg-black opacity-60"></div>
+                 <div class="w-full h-full flex justify-center items-center">
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl md:text-7xl font-serif leading-tight text-shadow">至高の食材が織りなす、王の晩餐。</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-200">一口で、あなたはイタリアンの虜になる。</p>
+            </div>
+        </section>
+
+        <!-- コンセプトセクション -->
+        <section id="concept" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="md:flex md:items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-serif text-primary mb-6">本物を知る大人のための、一皿。</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            「イタリアンの王」は、ただのレストランではありません。
+                            それは、シェフが厳選した旬の最高級食材と、伝統的な調理法への深い敬意、そして革新的な感性が融合する美食の舞台です。
+                            一皿一皿に込められた物語を、五感で味わう。私たちがご提供するのは、忘れられない食の体験。
+                            大切な人との特別な夜に、本物のイタリアンが奏でる至福のひとときをお過ごしください。
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <div id="concept-image-container" class="w-full h-96 bg-gray-200 rounded-lg shadow-2xl flex justify-center items-center overflow-hidden">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- メニューセクション -->
+        <section id="menu" class="bg-primary/5 py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-serif text-center text-primary mb-16">王のスペシャリテ</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- メニュー1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div id="menu1-image-container" class="w-full h-72 bg-gray-200 flex justify-center items-center"><div class="loader"></div></div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif text-primary mb-3">"海の王様" オマール海老のトマトクリームリングイネ</h3>
+                            <p class="text-gray-600">海の恵みの象徴であるオマール海老を丸ごと一尾、豪快に使用。濃厚な海老の旨味が溶け込んだ特製トマトクリームソースが、自家製生パスタに絡む至極の一品です。</p>
+                        </div>
+                    </div>
+                    <!-- メニュー2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div id="menu2-image-container" class="w-full h-72 bg-gray-200 flex justify-center items-center"><div class="loader"></div></div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif text-primary mb-3">熟成和牛のビステッカ・アッラ・フィオレンティーナ</h3>
+                            <p class="text-gray-600">厳選されたA5ランクの熟成和牛を、豪快に炭火で焼き上げ、旨味を凝縮。岩塩と最高品質のオリーブオイルで、肉本来の味を最大限に引き出します。</p>
+                        </div>
+                    </div>
+                    <!-- メニュー3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div id="menu3-image-container" class="w-full h-72 bg-gray-200 flex justify-center items-center"><div class="loader"></div></div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-serif text-primary mb-3">白トリュフ香るポルチーニ茸のリゾット</h3>
+                            <p class="text-gray-600">香り高いイタリア産ポルチーニ茸をふんだんに使用。仕上げに白トリュフオイルを贅沢に回しかけ、一口ごとに芳醇な香りと深い味わいが口の中に広がります。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ギャラリーセクション -->
+        <section id="gallery" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-serif text-center text-primary mb-16">王の空間</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div id="gallery1-image-container" class="w-full h-96 bg-gray-200 rounded-lg shadow-md flex justify-center items-center overflow-hidden"><div class="loader"></div></div>
+                    <div id="gallery2-image-container" class="w-full h-96 bg-gray-200 rounded-lg shadow-md flex justify-center items-center overflow-hidden"><div class="loader"></div></div>
+                    <div id="gallery3-image-container" class="w-full h-96 bg-gray-200 rounded-lg shadow-md flex justify-center items-center overflow-hidden"><div class="loader"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- よくある質問セクション -->
+        <section id="faq" class="bg-primary/5 py-24">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-4xl font-serif text-center text-primary mb-16">よくあるご質問</h2>
+                <div class="space-y-4" id="faq-container">
+                    <!-- Q&A 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="w-full text-left flex justify-between items-center faq-toggle">
+                            <h4 class="font-semibold text-lg text-primary">ドレスコードはありますか？</h4>
+                            <span class="transform transition-transform duration-300 text-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+                        </button>
+                        <div class="mt-4 text-gray-600 hidden faq-answer"><p>スマートカジュアルを推奨しております。過度にラフな服装（Tシャツ、短パン、サンダル等）はご遠慮いただいておりますが、ジャケット着用は必須ではございません。</p></div>
+                    </div>
+                     <!-- Q&A 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="w-full text-left flex justify-between items-center faq-toggle">
+                            <h4 class="font-semibold text-lg text-primary">予約は必要ですか？</h4>
+                            <span class="transform transition-transform duration-300 text-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+                        </button>
+                        <div class="mt-4 text-gray-600 hidden faq-answer"><p>お席に限りがございますので、ご予約いただくことを強くお勧めいたします。特に週末や祝日は混み合いますので、お早めにご連絡ください。お電話またはウェブサイトの予約フォームより承っております。</p></div>
+                    </div>
+                     <!-- Q&A 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                         <button class="w-full text-left flex justify-between items-center faq-toggle">
+                            <h4 class="font-semibold text-lg text-primary">アレルギー対応は可能ですか？</h4>
+                            <span class="transform transition-transform duration-300 text-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></span>
+                        </button>
+                        <div class="mt-4 text-gray-600 hidden faq-answer"><p>はい、可能です。ご予約の際に、アレルギーのある食材や苦手な食材について詳しくお申し付けください。シェフがお客様のために特別メニューをご用意いたします。</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 店舗情報セクション -->
+        <section id="info" class="py-24">
+            <div class="container mx-auto px-6">
+                 <h2 class="text-4xl font-serif text-center text-primary mb-16">アクセス</h2>
+                <div class="md:flex md:space-x-12 items-center">
+                    <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+                        <p class="mb-4 text-lg"><strong>住所:</strong> 東京都新宿区神楽坂1-2-3</p>
+                        <p class="mb-4 text-lg"><strong>営業時間:</strong><br>ランチ: 12:00 - 15:00 (L.O. 14:00)<br>ディナー: 18:00 - 23:00 (L.O. 21:30)</p>
+                        <p class="mb-4 text-lg"><strong>電話番号:</strong> 03-9876-5432</p>
+                        <p class="mb-4 text-lg"><strong>定休日:</strong> 月曜日</p>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <div class="w-full h-96 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center text-gray-500">
+                             <!-- Google Mapsの埋め込み用iframeをここに追加 -->
+                            <p class="text-xl">Google Map Placeholder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-6 text-center text-gray-300">
+            <p>&copy; <span id="current-year"></span> イタリアンの王. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // モバイルメニューのトグル
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // フッターの年を更新
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+            // Q&A アコーディオン
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const answer = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('span');
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // 画像を逐次生成
+            const apiKey = ""; // Canvas環境で自動的に提供されます
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+
+            const imagePrompts = [
+                { id: 'hero-image-container', prompt: 'A gourmet plate of exquisite Italian pasta, beautifully arranged on a dark plate, seen from top down. The lighting is dramatic, like a painting by Caravaggio. The restaurant\'s luxurious, dimly-lit interior is softly blurred in the background. Photorealistic, 8k, epic food photography.' },
+                { id: 'concept-image-container', prompt: 'A passionate Italian chef with a focused expression, carefully drizzling high-quality olive oil onto a finished dish. He is in a professional, clean kitchen. The shot is a close-up, capturing the steam rising from the food. Warm lighting, photorealistic.' },
+                { id: 'menu1-image-container', prompt: 'Close-up of a vibrant plate of lobster linguine in a rich tomato cream sauce. A whole grilled lobster is placed on top. Garnished with fresh basil. Served on a rustic ceramic plate. Food magazine photography, high detail.' },
+                { id: 'menu2-image-container', prompt: 'A thick-cut Bistecca alla Fiorentina, perfectly grilled with a dark crust and a juicy, rare center. It is sliced and presented on a wooden board next to rock salt and a sprig of rosemary. Charcoal grill marks are visible. Photorealistic, mouth-watering.' },
+                { id: 'menu3-image-container', prompt: 'A creamy porcini mushroom risotto in a white bowl, with delicate shavings of white truffle on top. A wisp of steam rises from the dish. The lighting is soft and elegant. Top-down view, minimalist style, professional food photography.' },
+                { id: 'gallery1-image-container', prompt: 'The interior of a luxurious Italian restaurant. Dim, romantic lighting from candles on tables with white tablecloths. Deep red velvet chairs and dark wood furniture. A hint of a well-stocked wine cellar in the background. Moody, atmospheric, photorealistic.' },
+                { id: 'gallery2-image-container', prompt: 'A chef\'s hands skillfully making fresh pasta dough on a floured wooden surface. The image captures the motion and the texture of the dough. Natural light from a nearby window. Artisan feel, shallow depth of field.' },
+                { id: 'gallery3-image-container', prompt: 'The elegant facade of a high-end restaurant in Shinjuku at night. A warm, inviting glow emanates from within. A simple, stylish sign with golden lettering. The street is slightly wet, reflecting the lights. Photorealistic, evening shot.' }
+            ];
+
+            const generateAndSetImage = async (containerId, prompt) => {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+
+                try {
+                    const payload = { instances: [{ prompt }], parameters: { "sampleCount": 1 } };
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                    const result = await response.json();
+                    
+                    if (result.predictions && result.predictions[0]?.bytesBase64Encoded) {
+                        const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
+                        container.innerHTML = '';
+                        
+                        if (containerId === 'hero-image-container') {
+                            container.style.backgroundImage = `url(${imageUrl})`;
+                            container.style.backgroundSize = 'cover';
+                            container.style.backgroundPosition = 'center';
+                            const overlay = document.createElement('div');
+                            overlay.className = 'absolute inset-0 bg-black opacity-60';
+                            container.appendChild(overlay);
+                        } else {
+                            const img = document.createElement('img');
+                            img.src = imageUrl;
+                            img.alt = prompt;
+                            img.className = 'w-full h-full object-cover';
+                            container.appendChild(img);
+                        }
+                    } else {
+                        throw new Error('Image data not found in response.');
+                    }
+                } catch (error) {
+                    console.error(`Failed to generate image for ${containerId}:`, error);
+                    container.innerHTML = `<p class="text-red-500 p-4">画像生成エラー</p>`;
+                }
+            };
+            
+            const processImagesSequentially = async () => {
+                for (const item of imagePrompts) {
+                    await generateAndSetImage(item.id, item.prompt);
+                }
+            };
+
+            processImagesSequentially();
+        });
+    </script>
+
+</body>
+</html>
